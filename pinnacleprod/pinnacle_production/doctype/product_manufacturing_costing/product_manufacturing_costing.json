@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-06-28 12:05:27.298463",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sales_order",
+  "select_item",
+  "bom",
+  "product_manufacturing_costing",
+  "scrap_cost"
+ ],
+ "fields": [
+  {
+   "fieldname": "bom",
+   "fieldtype": "Link",
+   "label": "Bom",
+   "options": "BOM"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "depends_on": "sales_order",
+   "fieldname": "select_item",
+   "fieldtype": "Select",
+   "label": "Select Item"
+  },
+  {
+   "fieldname": "product_manufacturing_costing",
+   "fieldtype": "Float",
+   "is_virtual": 1,
+   "label": "Product Manufacturing Costing"
+  },
+  {
+   "fieldname": "scrap_cost",
+   "fieldtype": "Float",
+   "is_virtual": 1,
+   "label": "Scrap Cost"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-07-01 16:56:41.229960",
+ "modified_by": "Administrator",
+ "module": "Pinnacle Production",
+ "name": "Product Manufacturing Costing",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
