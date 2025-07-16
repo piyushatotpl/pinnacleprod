@@ -64,7 +64,6 @@ class CustomWorkOrder(WorkOrder):
 
         # Get BOM document
         bom_doc = frappe.get_doc("BOM", self.bom_no)
-        print(f"Preparing Job Card for Operation: {row.operation}")
 
         for op in bom_doc.operations:
             if op.operation == row.operation:
@@ -75,14 +74,11 @@ class CustomWorkOrder(WorkOrder):
         if self.qty and row.time_in_mins:
             print(f"Actual Time in Mins: {row.time_in_mins}")
             total_operation_time = row.time_in_mins
+            print(row.batch_size)
             operation_time_per_unit = total_operation_time / row.batch_size
 
             row.time_in_mins = operation_time_per_unit * row.job_card_qty
 
-            print(f"Total Qty: {self.qty}")
-            print(f"Time in Mins for this Job Card: {row.time_in_mins}")
-            print(f"Operation Time Per Unit: {operation_time_per_unit}")
-            print(f"Job Card Qty: {row.job_card_qty}")
 
         # Create Job Card
         job_card_doc = create_job_card(
