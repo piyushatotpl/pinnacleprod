@@ -46,6 +46,7 @@ app_license = "mit"
 doctype_js = {
     "Sales Order": "pinnacle_production/doctype/sales_order/sales_order.js",
     "Stock Entry": "pinnacle_production/doctype/stock_entry/stock_entry.js",
+    "Production Plan":"pinnacle_production/doctype/production_plan/production_plan.js",
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
