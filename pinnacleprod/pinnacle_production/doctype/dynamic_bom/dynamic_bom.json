@@ -1,0 +1,99 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-30 13:35:35.502104",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sales_order",
+  "customer",
+  "finished_good",
+  "material_1",
+  "material_2",
+  "material_3",
+  "routing"
+ ],
+ "fields": [
+  {
+   "fieldname": "finished_good",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Finished Good",
+   "link_filters": "[[\"Item\",\"item_group\",\"=\",\"Finished Group\"]]",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "routing",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Routing",
+   "options": "Routing",
+   "reqd": 1
+  },
+  {
+   "fieldname": "material_1",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material 1",
+   "link_filters": "[[\"Item\",\"item_group\",\"=\",\"Material 1\"]]",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "material_3",
+   "fieldtype": "Link",
+   "label": "Material 3",
+   "link_filters": "[[\"Item\",\"item_group\",\"=\",\"Material 3\"]]",
+   "options": "Item"
+  },
+  {
+   "fieldname": "material_2",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material 2",
+   "link_filters": "[[\"Item\",\"item_group\",\"=\",\"Material 2\"]]",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "link_filters": "[[\"Sales Order\",\"docstatus\",\"=\",\"1\"]]",
+   "options": "Sales Order"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-30 15:54:51.615210",
+ "modified_by": "Administrator",
+ "module": "Pinnacle Production",
+ "name": "Dynamic BOM",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
