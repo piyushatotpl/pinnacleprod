@@ -1,10 +1,10 @@
 import frappe
 from frappe import _
+from frappe.utils import flt, get_datetime, add_to_date
 
 
 @frappe.whitelist()
 def get_selected_bom_comparison(item_code, qty, planned_start_time, boms):
-    from frappe.utils import flt, get_datetime, add_to_date
 
     boms = frappe.parse_json(boms)
 
@@ -13,6 +13,7 @@ def get_selected_bom_comparison(item_code, qty, planned_start_time, boms):
     for bom_name in boms:
 
         bom_doc = frappe.get_doc("BOM", bom_name)
+
         entry = {
             "bom_name": bom_doc.name,
             "material_cost": 0,
@@ -48,7 +49,7 @@ def get_selected_bom_comparison(item_code, qty, planned_start_time, boms):
 
         # Check workstation conflict
         if entry["bom_name"]:
-
+            
             conflict = frappe.get_list(
                 "Job Card",
                 filters=[
@@ -61,7 +62,8 @@ def get_selected_bom_comparison(item_code, qty, planned_start_time, boms):
                 fields=["name"],
                 limit=1,
             )
-            frappe.throw(str(conflict))
+            
+            # frappe.throw(str(conflict))
             entry["availability"] = "❌ Busy" if conflict else "✅ Available"
 
         result.append(entry)

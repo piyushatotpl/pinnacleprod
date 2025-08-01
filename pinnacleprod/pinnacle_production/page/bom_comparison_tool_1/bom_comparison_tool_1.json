@@ -1,10 +1,10 @@
 {
  "content": null,
- "creation": "2025-07-01 18:08:23.101308",
+ "creation": "2025-07-05 18:41:10.046658",
  "docstatus": 0,
  "doctype": "Page",
  "idx": 0,
- "modified": "2025-07-01 18:08:23.101308",
+ "modified": "2025-08-01 14:43:55.791843",
  "modified_by": "Administrator",
  "module": "Pinnacle Production",
  "name": "bom-comparison-tool-1",
@@ -14,5 +14,6 @@
  "script": null,
  "standard": "Yes",
  "style": null,
- "system_page": 0
+ "system_page": 0,
+ "title": "Bom Comparison Tool"
 }
